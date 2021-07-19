@@ -1,6 +1,6 @@
 #!/bin/bash
 clear
-url=https://raw.githubusercontent.com/Haris131/xderm-mini_GUI/main
+url=https://raw.githubusercontent.com/Haris131/xderm-mini_GUI/main/version
 while true; do
  clear;echo "######################################"
  echo -e "   Auto installer Xderm-mini GUI\n######################################"
