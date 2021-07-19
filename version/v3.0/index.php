@@ -105,7 +105,7 @@ if ( window.history.replaceState ) {
 </script>
 <body class="box_script" style="text-align:center">
 	<center>
-		<a href="limit.php" onClick="">
+		<a href="login.php" onClick="logout()">
 		<img src="img/image.png" width: 80%></a>
 	</center>
     <form method="post">
