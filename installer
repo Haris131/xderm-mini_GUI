@@ -1,0 +1,52 @@
+#!/bin/bash
+clear
+url=https://raw.githubusercontent.com/Haris131/xderm-mini_GUI/main
+while true; do
+ clear;echo "######################################"
+ echo -e "   Auto installer Xderm-mini GUI\n######################################"
+ echo -e "1. versi 1.0\t6. versi 2.9\t00. exit"
+ echo -e "2. versi 1.8\t7. versi 3.0"
+ echo -e "3. versi 2.3"
+ echo -e "4. versi 2.6"
+ echo -e "5. versi 2.8"
+ read -p "pilih : " x
+ case $x in
+  "1")
+  ver="v1.0";break
+  ;;
+  "2")
+  ver="v1.8";break
+  ;;
+  "3")
+  ver="v2.3";break
+  ;;
+  "4")
+  ver="v2.6";break
+  ;;
+  "5")
+  ver="v2.8";break
+  ;;
+  "6")
+  ver="v2.9";break
+  ;;
+  "7")
+  ver="v3.0";break
+  ;;
+  "00")
+  exit
+  ;;
+ esac
+done
+clear
+time_stamp=$(date)
+mkdir -p /www/xderm/backup/"${time_stamp}"
+echo -e "Backup, Tunggu....."
+cp /www/xderm/xderm-mini /www/xderm/backup/"${time_stamp}"/xderm-mini
+cp /www/xderm/index.php /www/xderm/backup/"${time_stamp}"/index.php
+echo -e "File xderm-mini & index.php terbackup difolder /www/xderm/backup/'${time_stamp}'"
+echo -e ""
+echo -e "Installing, Tunggu....."
+curl -s ${url}/${ver}/xderm-mini > /www/xderm/xderm-mini
+curl -s ${url}/${ver}/index.php > /www/xderm/index.php
+router_ip=$(ifconfig br-lan | grep 'inet addr:' | awk '{print $2}' | awk -F ':' '{print $2}')
+echo -e "xderm-mini GUI $ver terinstall.\n\nSilahkan Akses 'http://${router_ip}/xderm'"
