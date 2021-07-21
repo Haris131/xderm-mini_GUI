@@ -56,6 +56,27 @@ body {
   margin: 5px;
   top: 0px;
 }
+.footer {
+ width: 100%;
+ height: 10px;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ color: #ffffff;
+ font-weight: bold;
+ bottom: 0px;
+ z-index: 1;
+ background: repeating-linear-gradient(-45deg, red 0%, yellow 7.14%, rgb(0,255,0) 14.28%,
+ rgb(0,255,255) 21.4%, cyan 28.56%, blue 35.7%, magenta 42.84%, red 50%);
+ background-size: 600vw 600vw;
+ -webkit-text-fill-color: transparent;
+ -webkit-background-clip: text;
+ animation: slide 10s linear infinite forwards;
+}
+@keyframes slide {
+ 0% {background-position-x: 0%;}
+ 100% {background-position-x: 600vw;}
+}
 </style>
 <script>
 function shipping_calc() {
