@@ -6,7 +6,7 @@ while true; do
  echo -e "   Auto installer Xderm-mini GUI\n######################################"
  echo -e "1. versi 1.0\t6. versi 2.9\t00. exit"
  echo -e "2. versi 1.8\t7. versi 3.0"
- echo -e "3. versi 2.3"
+ echo -e "3. versi 2.3\t8. versi 3.1"
  echo -e "4. versi 2.6"
  echo -e "5. versi 2.8"
  read -p "pilih : " x
@@ -31,6 +31,9 @@ while true; do
   ;;
   "7")
   ver="v3.0";break
+  ;;
+  "8")
+  ver="v3.1";break
   ;;
   "00")
   exit
