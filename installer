@@ -48,12 +48,12 @@ clear
 time_stamp=$(date)
 mkdir -p /www/xderm/backup/"${time_stamp}"
 echo -e "Backup, Tunggu....."
-cp /www/xderm/xderm-mini /www/xderm/backup/"${time_stamp}"/xderm-mini
-cp /www/xderm/index.php /www/xderm/backup/"${time_stamp}"/index.php
+mv /www/xderm/xderm-mini /www/xderm/backup/"${time_stamp}"/xderm-mini
+mv /www/xderm/index.php /www/xderm/backup/"${time_stamp}"/index.php
 echo -e "File xderm-mini & index.php terbackup difolder /www/xderm/backup/'${time_stamp}'"
 echo -e ""
 echo -e "Installing, Tunggu....."
-curl -s ${url}/${ver}/xderm-mini > /www/xderm/xderm-mini
-curl -s ${url}/${ver}/index.php > /www/xderm/index.php
+wget ${url}/${ver}/xderm-mini -O /www/xderm/xderm-mini
+wget ${url}/${ver}/index.php -O /www/xderm/index.php
 router_ip=$(ifconfig br-lan | grep 'inet addr:' | awk '{print $2}' | awk -F ':' '{print $2}')
 echo -e "xderm-mini GUI $ver terinstall.\n\nSilahkan Akses 'http://${router_ip}/xderm'"
